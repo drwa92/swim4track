@@ -1,0 +1,4 @@
+# Compatibility bounds for a dedicated ROS 2 Humble / Python 3.10 environment.
+# These are installation constraints, not a fully resolved reproduction lock.
+numpy>=1.24,<2
+setuptools>=68,<81

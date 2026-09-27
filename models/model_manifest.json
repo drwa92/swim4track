@@ -1,0 +1,125 @@
+{
+  "schema": "swim4track_model_manifest_v1",
+  "model_id": "s4t_tqc_nominal_seed17",
+  "framework": "Swim4Track",
+  "paper_controller_label": "S4T-TQC",
+  "historical_campaign_label": "Swim4Track",
+  "file": "tqc_nominal_seed17_final.zip",
+  "sha256": "304f281a7843d0c0b2e2016ad470a8c923524a4e236f536e07764a51d7967f2f",
+  "bytes": 2879572,
+  "algorithm": "TQC",
+  "loader_class": "sb3_contrib.TQC",
+  "deployment_prediction": "deterministic",
+  "observation": {
+    "shape": [
+      23
+    ],
+    "dtype": "float32",
+    "bounds": [
+      -1.0,
+      1.0
+    ],
+    "blocks": [
+      {
+        "name": "body_position_error",
+        "slice": [
+          0,
+          3
+        ]
+      },
+      {
+        "name": "rotation_log_error",
+        "slice": [
+          3,
+          6
+        ]
+      },
+      {
+        "name": "body_vertical_direction",
+        "slice": [
+          6,
+          9
+        ]
+      },
+      {
+        "name": "body_linear_velocity_error",
+        "slice": [
+          9,
+          12
+        ]
+      },
+      {
+        "name": "body_angular_velocity_error",
+        "slice": [
+          12,
+          15
+        ]
+      },
+      {
+        "name": "previous_raw_actor_action",
+        "slice": [
+          15,
+          23
+        ]
+      }
+    ],
+    "slice_convention": "Python start-inclusive, end-exclusive"
+  },
+  "action": {
+    "shape": [
+      8
+    ],
+    "dtype": "float32",
+    "bounds": [
+      -1.0,
+      1.0
+    ],
+    "meaning": "normalized direct-thruster actor action; not microsecond PWM"
+  },
+  "training_metadata_from_archive": {
+    "seed": 17,
+    "num_timesteps": 300000,
+    "learning_rate": 0.0003,
+    "buffer_size": 1000000,
+    "learning_starts": 10000,
+    "batch_size": 256,
+    "tau": 0.005,
+    "gamma": 0.99,
+    "gradient_steps": 1,
+    "top_quantiles_to_drop_per_net": 2,
+    "ent_coef": "auto",
+    "target_entropy": -8.0,
+    "policy_kwargs": {
+      "net_arch": {
+        "pi": [
+          128,
+          128
+        ],
+        "qf": [
+          256,
+          256
+        ]
+      },
+      "n_critics": 2,
+      "n_quantiles": 25,
+      "use_sde": false
+    }
+  },
+  "training_system_info_from_archive": "- OS: Linux-6.17.0-1032-oem-x86_64-with-glibc2.39 # 32-Ubuntu SMP PREEMPT_DYNAMIC Fri Jul 24 05:46:26 UTC 2026\n- Python: 3.12.3\n- Stable-Baselines3: 2.9.0\n- PyTorch: 2.12.1+cu130\n- GPU Enabled: True\n- Numpy: 2.5.2\n- Cloudpickle: 3.1.2\n- Gymnasium: 1.3.0\n",
+  "provenance": {
+    "source_archive_member": "pose_vs_swim4track_evidence_v1/locked_models/swim4track_tqc/tqc_nominal_seed17_final.zip",
+    "hash_crosschecked_against": [
+      "pose_vs_swim4track_evidence_v1/swim4track_tqc_seed17/chunks/c000_007/evaluation_manifest.json",
+      "swim4track_stonefish_robustness_v2/frozen_manifest.json"
+    ],
+    "metadata_read_method": "ZIP JSON and text members only; serialized Python objects were not executed for this metadata audit",
+    "source_code_modules": [
+      "tracking.py",
+      "plant.py",
+      "train_robust_policy_benchmark.py",
+      "deployment_contract.py"
+    ]
+  },
+  "license_status": "Model redistribution terms require confirmation by the rights holder; the source-code Apache-2.0 declaration is not applied to weights by inference.",
+  "scope": "Simulation research checkpoint. Cross-simulator deployment is not hardware validation."
+}

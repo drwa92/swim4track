@@ -1,0 +1,48 @@
+{
+  "campaign_id": "tail_tqc_swim4track_v1",
+  "classical_protocol_id": "classical_benchmarks_v1",
+  "status": "development_only_final_bank_closed",
+  "common_allocator": {
+    "kind": "damped_minimum_norm_common_scaling",
+    "damping": 1e-06,
+    "force_limit_n": 18.24,
+    "command_limit": 0.60
+  },
+  "development": {
+    "base_seed": 730000,
+    "tuning_episodes": 8,
+    "validation_episodes": 20,
+    "max_steps": 300,
+    "score": "position_rmse + 0.02*attitude_rmse_deg + 0.25*(1-continuous_success) + 0.10*p95_position + 100*unsafe_fraction",
+    "validation_gates": {
+      "unsafe_episodes_max": 0,
+      "rms_position_m_max": 0.50,
+      "rms_attitude_deg_max": 20.0,
+      "pid_solve_p99_ms_max": 5.0,
+      "nmpc_optimizer_success_fraction_min": 0.95
+    }
+  },
+  "pid_candidates": [
+    {"name": "pid_base", "kp_scale": 1.0, "kd_scale": 1.0, "ki_scale": 1.0, "antiwindup_gain": 0.25, "feedforward": true},
+    {"name": "pid_kp_low", "kp_scale": 0.8, "kd_scale": 1.0, "ki_scale": 1.0, "antiwindup_gain": 0.25, "feedforward": true},
+    {"name": "pid_kp_high", "kp_scale": 1.2, "kd_scale": 1.0, "ki_scale": 1.0, "antiwindup_gain": 0.25, "feedforward": true},
+    {"name": "pid_kd_low", "kp_scale": 1.0, "kd_scale": 0.8, "ki_scale": 1.0, "antiwindup_gain": 0.25, "feedforward": true},
+    {"name": "pid_kd_high", "kp_scale": 1.0, "kd_scale": 1.2, "ki_scale": 1.0, "antiwindup_gain": 0.25, "feedforward": true},
+    {"name": "pid_no_integral", "kp_scale": 1.0, "kd_scale": 1.0, "ki_scale": 0.0, "antiwindup_gain": 0.0, "feedforward": true},
+    {"name": "pid_integral_low", "kp_scale": 1.0, "kd_scale": 1.0, "ki_scale": 0.5, "antiwindup_gain": 0.25, "feedforward": true},
+    {"name": "pid_aw_low", "kp_scale": 1.0, "kd_scale": 1.0, "ki_scale": 1.0, "antiwindup_gain": 0.10, "feedforward": true},
+    {"name": "pid_no_feedforward", "kp_scale": 1.0, "kd_scale": 1.0, "ki_scale": 1.0, "antiwindup_gain": 0.25, "feedforward": false}
+  ],
+  "nmpc_candidates": [
+    {"name": "nmpc_base", "horizon_steps": 8, "control_blocks": 2, "max_iterations": 1, "tracking_scale": 1.0, "velocity_scale": 1.0, "wrench_change_weight": 0.08},
+    {"name": "nmpc_tracking_high", "horizon_steps": 8, "control_blocks": 2, "max_iterations": 1, "tracking_scale": 1.25, "velocity_scale": 1.0, "wrench_change_weight": 0.08},
+    {"name": "nmpc_velocity_high", "horizon_steps": 8, "control_blocks": 2, "max_iterations": 1, "tracking_scale": 1.0, "velocity_scale": 1.5, "wrench_change_weight": 0.08},
+    {"name": "nmpc_smooth", "horizon_steps": 8, "control_blocks": 2, "max_iterations": 1, "tracking_scale": 1.0, "velocity_scale": 1.0, "wrench_change_weight": 0.16},
+    {"name": "nmpc_short", "horizon_steps": 6, "control_blocks": 2, "max_iterations": 1, "tracking_scale": 1.0, "velocity_scale": 1.0, "wrench_change_weight": 0.08}
+  ],
+  "leakage_guard": {
+    "allowed_trajectory_prefix": "adapt_",
+    "forbidden_trajectory_names": ["hold_level", "hold_heading", "quintic_coupled", "circle_level", "circle_attitude", "helix_unseen", "figure8_unseen", "coupled_fast"],
+    "final_suites_must_not_be_imported": ["core_cases", "severity_cases", "sensor_cases"]
+  }
+}

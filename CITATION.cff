@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "Please cite this software if you use its implementation. Add the published manuscript citation when a verified record is available."
+type: software
+title: "Swim4Track: Trajectory-Conditioned Reinforcement Learning for Direct Thruster Control of Underwater Vehicles"
+authors:
+  - family-names: Akram
+    given-names: Waseem
+  - family-names: Ferreira
+    given-names: Fausto
+abstract: >-
+  Research implementation of trajectory-conditioned direct-thruster control
+  with a Python underwater-vehicle plant, a frozen TQC checkpoint, and a
+  ROS 2 interface for Stonefish simulation. Includes a classical PID
+  comparator and reproducible demonstration workflows.
+keywords:
+  - underwater robotics
+  - trajectory tracking
+  - reinforcement learning
+  - direct thruster control
+  - Stonefish

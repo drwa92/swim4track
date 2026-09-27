@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "swim4track"
+version = "0.2.0"
+description = "Trajectory-conditioned direct-thruster control for underwater vehicle research"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "Apache-2.0 (code); see NOTICE for model and media terms"}
+authors = [{name = "Waseem Akram"}, {name = "Fausto Ferreira"}]
+dependencies = ["numpy>=1.24,<3", "scipy>=1.10,<2"]
+
+[project.optional-dependencies]
+inference = ["stable-baselines3==2.9.0", "sb3-contrib==2.9.0"]
+train = ["stable-baselines3==2.9.0", "sb3-contrib==2.9.0", "tensorboard>=2.14,<3"]
+viz = ["matplotlib>=3.7,<4"]
+
+[project.scripts]
+swim4track-demo = "swim4track.demo:main"
+swim4track-train = "swim4track.train:main"
+swim4track-check-model = "swim4track.policy:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+swim4track = ["config/*.json"]
+
+[tool.setuptools.data-files]
+"share/swim4track/models" = ["models/tqc_nominal_seed17_final.zip", "models/model_manifest.json", "models/README.md"]

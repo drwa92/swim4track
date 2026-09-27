@@ -1,0 +1,29 @@
+Swim4Track robustness evidence landscape - numerical audit
+
+Trials: 270 unique / 54 cells / 5 executions per cell
+Repeat interpretation: deterministic numerical repeatability; not independent environmental samples.
+Configured water current in every trial: 0.0 m/s.
+
+Equal-weight means over 18 trajectory-condition cells:
+  PID: position RMSE=0.169280 m; attitude RMSE=3.486551 deg; tolerance=0.957468
+  TQC-DR: position RMSE=0.084857 m; attitude RMSE=8.755725 deg; tolerance=0.679940
+  Swim4Track: position RMSE=0.096815 m; attitude RMSE=6.348214 deg; tolerance=0.900725
+
+Direction counts across 18 fixed cells:
+  Swim4Track position RMSE < PID: 18/18
+  Swim4Track position RMSE < TQC-DR: 3/18
+  Swim4Track attitude RMSE < TQC-DR: 17/18
+  Swim4Track tolerance > TQC-DR: 18/18
+
+Headline arithmetic:
+  Position RMSE vs PID: 42.8082% lower
+  Position RMSE vs TQC-DR: 14.0919% higher (TQC-DR denominator)
+  Attitude RMSE vs TQC-DR: 27.4964% lower
+  Tolerance vs TQC-DR: 22.0785 percentage points higher
+  Unit-health mean absolute command vs TQC-DR: 7.0722% lower
+  Unit-health variation rate vs TQC-DR: 17.1368% lower
+  Swim4Track mean of per-run p99 controller-computation times: 3.278016 ms
+
+Degradation penalty = fault-condition position-RMSE cell mean / trajectory-matched unit-health position-RMSE cell mean for the same controller.
+A ratio below 1 is descriptive and is not evidence that an actuator fault is beneficial.
+No result in this package establishes active fault diagnosis, reconfiguration, current robustness, or hardware transfer.

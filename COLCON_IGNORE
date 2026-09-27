@@ -1,0 +1,3 @@
+# The top-level repository is installed as a Python package.
+# Build the ROS adapter explicitly with --base-paths ros2, as the installer does.
+# This prevents parent research-workspace scans from discovering release copies.

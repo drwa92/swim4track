@@ -1,0 +1,17 @@
+Swim4Track research software
+
+The supplied reef_bluerov2_baseline implementation declares Apache-2.0 in
+its package.xml and setup.py. This repository preserves that code-license
+declaration; the standard license text is provided in LICENSE. No new
+copyright owner or third-party permission is asserted by this notice.
+
+The implementation follows standard marine-craft dynamics and builds on
+the REEF/Swim4Real baseline formulation, Stable-Baselines3, SB3-Contrib TQC,
+Gymnasium, NumPy and SciPy. ROS 2 and Stonefish provide the separate
+deployment environment. These projects retain their own licenses and
+attribution requirements. They are not relicensed by this repository.
+
+The code-license declaration does not establish redistribution terms for
+model weights, figures, video, simulator meshes or external assets.
+See models/README.md and docs/ASSET_PROVENANCE.md. Complete the release
+checklist before public distribution.

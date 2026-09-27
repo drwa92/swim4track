@@ -1,0 +1,31 @@
+{
+  "schema": "swim4track_python_demo_v1",
+  "controller": "pid",
+  "trajectory": "circle_level",
+  "seed": 20000,
+  "simulator": "supplied Python plant",
+  "requested_duration_s": 40.0,
+  "observed_duration_s": 40.0,
+  "control_dt_s": 0.1,
+  "physics_dt_s": 0.02,
+  "completed": true,
+  "terminated_unsafe": false,
+  "recorded_steps": 400,
+  "position_rmse_m": 0.03434202360960275,
+  "position_max_m": 0.2262023574583996,
+  "attitude_rmse_deg": 2.2490188563360127,
+  "maximum_abs_plant_command": 0.4458382649606401,
+  "local_controller_compute_p99_ms": 0.4916164237511107,
+  "measurement_note": "Illustrative single rollout, full duration including acquisition; not a paper score or hard real-time benchmark.",
+  "controller_identity": {
+    "frozen_sha256": "b76c7c93054e864aeea3bd4945ec3ea814c6ebe55d94dfc86ed2db6bb29a0ec6",
+    "protocol_sha256": "afcae8710bc15aded1197f2971c6cba9df3bfa11f9259d193536779a52ffd189",
+    "candidate_name": "pid_kp_high"
+  },
+  "software": {
+    "swim4track": "0.1.0",
+    "python": "3.12.14",
+    "numpy": "2.3.5"
+  },
+  "finite_state_trace": true
+}

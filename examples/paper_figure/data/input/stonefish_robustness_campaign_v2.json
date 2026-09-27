@@ -1,0 +1,67 @@
+{
+  "campaign_id": "swim4track_stonefish_robustness_v2",
+  "status": "frozen_before_first_v2_trial",
+  "scope": "cross_simulator_actuator_degradation_robustness_not_sim_to_real",
+  "queue_randomization_seed": 20260923,
+  "queue_sha256": "ccccb6eee81e78bcd3e549dd3699e2cde338b812cd7276cb889b4f8fd1fc8a3d",
+  "controllers": [
+    {
+      "id": "swim4track",
+      "paper_label": "Swim4Track",
+      "model_sha256": "304f281a7843d0c0b2e2016ad470a8c923524a4e236f536e07764a51d7967f2f"
+    },
+    {
+      "id": "tqc_dr",
+      "paper_label": "TQC-DR",
+      "model_sha256": "d655eda3399b26e7a48d0b7793537ab53e4aa3b45981d70ed645031117d06b58"
+    },
+    {
+      "id": "pid",
+      "paper_label": "PID",
+      "frozen_sha256": "b76c7c93054e864aeea3bd4945ec3ea814c6ebe55d94dfc86ed2db6bb29a0ec6"
+    }
+  ],
+  "excluded_controllers": [
+    {
+      "id": "nmpc",
+      "reason": "frozen p99 solve time 120.2735 ms exceeds the 100 ms deadline"
+    },
+    {
+      "id": "pose_tqc",
+      "reason": "v2 retains the strongest representation-matched learned comparator and classical baseline to control campaign size"
+    },
+    {
+      "id": "sac_dr",
+      "reason": "v2 retains the stronger TQC-DR domain-randomized comparator to control campaign size"
+    }
+  ],
+  "paths": [
+    {"name": "circle_level", "trajectory_time_scale": 2.0, "evaluation_duration_s": 62.5},
+    {"name": "helix_unseen", "trajectory_time_scale": 2.0, "evaluation_duration_s": 74.5},
+    {"name": "figure8_unseen", "trajectory_time_scale": 2.0, "evaluation_duration_s": 66.5}
+  ],
+  "repetitions_per_cell": 5,
+  "conditions": [
+    {"id": "nominal_adapter", "affected_thrusters": [0, 1], "final_thruster_health": 1.0, "loss_ramp_s": 0.0},
+    {"id": "horizontal_pair_loss20_gradual", "affected_thrusters": [0, 1], "final_thruster_health": 0.8, "loss_ramp_s": 10.0},
+    {"id": "horizontal_pair_loss40_gradual", "affected_thrusters": [0, 1], "final_thruster_health": 0.6, "loss_ramp_s": 10.0},
+    {"id": "single_horizontal_loss50_gradual", "affected_thrusters": [0], "final_thruster_health": 0.5, "loss_ramp_s": 10.0},
+    {"id": "vertical_pair_loss40_gradual", "affected_thrusters": [4, 5], "final_thruster_health": 0.6, "loss_ramp_s": 10.0},
+    {"id": "mixed_horizontal_vertical_loss30_abrupt", "affected_thrusters": [0, 4], "final_thruster_health": 0.7, "loss_ramp_s": 0.0}
+  ],
+  "expected_trials": 270,
+  "primary_estimands": [
+    "condition-wise difference in position RMSE between Swim4Track and each comparator",
+    "condition-wise difference in attitude RMSE between Swim4Track and each comparator",
+    "continuous-success probability difference",
+    "actuator-effort and saturation response versus fault severity"
+  ],
+  "design_notes": [
+    "Controller code, controller parameters, model files, model hashes, actuator mapping, references, safety rules, and scorer are frozen.",
+    "All v2 scored conditions use zero configured water current; current is handled by a separate physics qualification gate.",
+    "Thruster degradation begins at evaluation start. Ramp duration and affected thrusters are queue-controlled and bag-audited.",
+    "Health is a multiplicative thrust factor; normalized command is scaled by sqrt(health) under the audited quadratic Stonefish thrust law.",
+    "The nominal-adapter condition measures the adapter path without applying a fault and must not be substituted with old nominal data.",
+    "The queue order is fixed and randomized before the first v2 trial; scientific failures are retained and are not automatically retried."
+  ]
+}

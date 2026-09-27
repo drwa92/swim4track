@@ -1,0 +1,117 @@
+{
+  "degradation_penalty_definition": "fault-condition cell-mean position RMSE divided by the trajectory-matched unit-health cell-mean position RMSE for the same controller",
+  "design": {
+    "all_configured_currents_mps": [
+      0.0
+    ],
+    "cell_count": 54,
+    "conditions": [
+      "nominal_adapter",
+      "horizontal_pair_loss20_gradual",
+      "horizontal_pair_loss40_gradual",
+      "single_horizontal_loss50_gradual",
+      "vertical_pair_loss40_gradual",
+      "mixed_horizontal_vertical_loss30_abrupt"
+    ],
+    "controllers": [
+      "pid",
+      "tqc_dr",
+      "swim4track"
+    ],
+    "executions_per_cell": [
+      5
+    ],
+    "repeat_interpretation": "deterministic numerical repeatability, not independent environmental samples",
+    "trajectories": [
+      "circle_level",
+      "helix_unseen",
+      "figure8_unseen"
+    ],
+    "trial_count": 270,
+    "unique_trial_count": 270
+  },
+  "directional_cell_counts": {
+    "denominator_cells": 18,
+    "swim4track_attitude_lower_than_tqc_dr": 17,
+    "swim4track_position_lower_than_pid": 18,
+    "swim4track_position_lower_than_tqc_dr": 3,
+    "swim4track_tolerance_higher_than_tqc_dr": 18
+  },
+  "equal_weight_cell_means": {
+    "pid": {
+      "attitude_rmse_deg": 3.4865510212983875,
+      "position_rmse_m": 0.16928045036208153,
+      "tolerance_fraction": 0.9574680549247839
+    },
+    "swim4track": {
+      "attitude_rmse_deg": 6.348214187148286,
+      "position_rmse_m": 0.09681455011604549,
+      "tolerance_fraction": 0.9007251518056888
+    },
+    "tqc_dr": {
+      "attitude_rmse_deg": 8.75572521805383,
+      "position_rmse_m": 0.08485661147739845,
+      "tolerance_fraction": 0.6799400368931277
+    }
+  },
+  "frozen_cell_summary_max_abs_difference": {
+    "attitude_rmse_deg_mean": 1.7763568394002505e-15,
+    "position_rmse_m_mean": 8.326672684688674e-17,
+    "time_in_tolerance_fraction_mean": 3.3306690738754696e-16
+  },
+  "headline_values": {
+    "attitude_vs_tqc_dr": 27.496420581374426,
+    "position_vs_pid": 42.80819202160407,
+    "position_vs_tqc_dr": 14.091935124974952,
+    "tolerance_vs_tqc_dr": 22.078511491256116,
+    "unit_health_command_variation_rate_vs_tqc_dr": 17.136800487549664,
+    "unit_health_mean_abs_command_vs_tqc_dr": 7.072191901049052
+  },
+  "interpretation_limits": [
+    "A degradation-penalty ratio below one is not evidence that actuator loss is beneficial.",
+    "No interval in this package is an inferential population confidence interval.",
+    "All campaign conditions use zero configured water current.",
+    "The campaign evaluates passive closed-loop resilience, not fault diagnosis or reconfiguration."
+  ],
+  "schema": "swim4track_robustness_evidence_landscape_audit_v1",
+  "software": {
+    "matplotlib": "3.10.8",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "python": "3.12.14"
+  },
+  "source_files": {
+    "cell_summaries.csv": {
+      "rows": 54,
+      "sha256": "ec3f7915e283ca7b1ed18bb5ec3692c495f60cda007120361a8434cf7f28a6f6"
+    },
+    "stonefish_robustness_campaign_v2.json": {
+      "sha256": "83672b873141b2bc87013f1532384b635e64f50fe7a78912be7022fe1c2efefd"
+    },
+    "valid_trial_metrics.csv": {
+      "rows": 270,
+      "sha256": "195144cb821f8fc032150579de5ecf52dc5a2646578b20bcda0f52e8b50fbcdb"
+    }
+  },
+  "success_execution_counts": {
+    "pid": {
+      "sustained": 72,
+      "terminal_pose": 90,
+      "total": 90
+    },
+    "swim4track": {
+      "sustained": 58,
+      "terminal_pose": 77,
+      "total": 90
+    },
+    "tqc_dr": {
+      "sustained": 14,
+      "terminal_pose": 69,
+      "total": 90
+    }
+  },
+  "timing": {
+    "maximum_recorded_deadline_miss_fraction": 0.0,
+    "swim4track_mean_trial_level_p99_ms": 3.2780161160588808
+  }
+}

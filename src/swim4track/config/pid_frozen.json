@@ -1,0 +1,45 @@
+{
+  "campaign_id": "tail_tqc_swim4track_v1",
+  "classical_protocol_id": "classical_benchmarks_v1",
+  "protocol_sha256": "afcae8710bc15aded1197f2971c6cba9df3bfa11f9259d193536779a52ffd189",
+  "controller": "pid",
+  "selected_candidate_index": 2,
+  "selected_candidate": {
+    "name": "pid_kp_high",
+    "kp_scale": 1.2,
+    "kd_scale": 1.0,
+    "ki_scale": 1.0,
+    "antiwindup_gain": 0.25,
+    "feedforward": true
+  },
+  "selection_rule": "minimum predeclared development score among zero-unsafe candidates",
+  "selection_sha256": "8a236b7378ba61a64b1444bfbe115273b1b1c5245c50474d54c20a0926ce18c3",
+  "validation_sha256": "b8a9fc1bfef931ab41ee664d59309c2ed5921805eea1fb9ec0437ae8eeb76207",
+  "validation_metrics": {
+    "return_": -276.61282630914474,
+    "rms_position_m": 0.09253564149235624,
+    "p95_position_m": 0.16143847850921966,
+    "rms_attitude_deg": 1.5948163166102973,
+    "rms_linear_velocity_mps": 0.040825550949900404,
+    "mean_l1_action": 1.8202908166862755,
+    "mean_l1_action_change": 0.05836728286508116,
+    "saturation_fraction": 0.0,
+    "solve_p50_ms": 0.38655827493130346,
+    "solve_p95_ms": 0.40936412506198394,
+    "solve_p99_ms": 0.4323484140081746,
+    "optimizer_success_fraction": 1.0,
+    "time_in_tolerance_fraction": 0.9991666666666668,
+    "episodes": 20,
+    "unsafe_episodes": 0,
+    "successful_episodes": 20,
+    "continuous_successful_episodes": 20,
+    "worst_episode_position_m": 0.45241493411807504
+  },
+  "validation_checks": {
+    "zero_unsafe": true,
+    "position": true,
+    "attitude": true,
+    "runtime": true
+  },
+  "status": "frozen_before_final_evaluation"
+}

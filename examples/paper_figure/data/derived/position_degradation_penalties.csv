@@ -1,0 +1,46 @@
+controller_id,controller_label,path,trajectory_label,condition_id,condition_code,fault_position_rmse_m,unit_health_position_rmse_m,degradation_penalty_ratio
+pid,PID,circle_level,Circle,horizontal_pair_loss20_gradual,C1,0.140302928743,0.116983326455,1.19934124797
+pid,PID,circle_level,Circle,horizontal_pair_loss40_gradual,C2,0.169359070006,0.116983326455,1.44771973184
+pid,PID,circle_level,Circle,single_horizontal_loss50_gradual,C3,0.150211724344,0.116983326455,1.28404387955
+pid,PID,circle_level,Circle,vertical_pair_loss40_gradual,C4,0.117891085566,0.116983326455,1.0077597307
+pid,PID,circle_level,Circle,mixed_horizontal_vertical_loss30_abrupt,C5,0.133396826531,0.116983326455,1.14030632033
+pid,PID,helix_unseen,Helix,horizontal_pair_loss20_gradual,C1,0.152747586314,0.126668784628,1.20588183397
+pid,PID,helix_unseen,Helix,horizontal_pair_loss40_gradual,C2,0.184337428751,0.126668784628,1.45527115692
+pid,PID,helix_unseen,Helix,single_horizontal_loss50_gradual,C3,0.163887852123,0.126668784628,1.29382983033
+pid,PID,helix_unseen,Helix,vertical_pair_loss40_gradual,C4,0.128407604185,0.126668784628,1.01372729329
+pid,PID,helix_unseen,Helix,mixed_horizontal_vertical_loss30_abrupt,C5,0.142193048577,0.126668784628,1.12255792928
+pid,PID,figure8_unseen,Figure 8,horizontal_pair_loss20_gradual,C1,0.218988033486,0.192781272407,1.13594038856
+pid,PID,figure8_unseen,Figure 8,horizontal_pair_loss40_gradual,C2,0.253994727731,0.192781272407,1.31752801794
+pid,PID,figure8_unseen,Figure 8,single_horizontal_loss50_gradual,C3,0.244574971393,0.192781272407,1.26866561434
+pid,PID,figure8_unseen,Figure 8,vertical_pair_loss40_gradual,C4,0.192707396303,0.192781272407,0.999616787961
+pid,PID,figure8_unseen,Figure 8,mixed_horizontal_vertical_loss30_abrupt,C5,0.217614438975,0.192781272407,1.1288152436
+tqc_dr,TQC-DR,circle_level,Circle,horizontal_pair_loss20_gradual,C1,0.0590392354754,0.0542597637914,1.0880850072
+tqc_dr,TQC-DR,circle_level,Circle,horizontal_pair_loss40_gradual,C2,0.0681376855161,0.0542597637914,1.25576819276
+tqc_dr,TQC-DR,circle_level,Circle,single_horizontal_loss50_gradual,C3,0.0332544420799,0.0542597637914,0.612874803654
+tqc_dr,TQC-DR,circle_level,Circle,vertical_pair_loss40_gradual,C4,0.0557650480572,0.0542597637914,1.02774218243
+tqc_dr,TQC-DR,circle_level,Circle,mixed_horizontal_vertical_loss30_abrupt,C5,0.040660636645,0.0542597637914,0.749369953053
+tqc_dr,TQC-DR,helix_unseen,Helix,horizontal_pair_loss20_gradual,C1,0.0889755595375,0.0819549830832,1.08566381433
+tqc_dr,TQC-DR,helix_unseen,Helix,horizontal_pair_loss40_gradual,C2,0.0968290136551,0.0819549830832,1.18149025248
+tqc_dr,TQC-DR,helix_unseen,Helix,single_horizontal_loss50_gradual,C3,0.0739140024525,0.0819549830832,0.90188539698
+tqc_dr,TQC-DR,helix_unseen,Helix,vertical_pair_loss40_gradual,C4,0.0820310054617,0.0819549830832,1.00092761142
+tqc_dr,TQC-DR,helix_unseen,Helix,mixed_horizontal_vertical_loss30_abrupt,C5,0.0754808136029,0.0819549830832,0.921003345535
+tqc_dr,TQC-DR,figure8_unseen,Figure 8,horizontal_pair_loss20_gradual,C1,0.118894351863,0.117396842661,1.01275595807
+tqc_dr,TQC-DR,figure8_unseen,Figure 8,horizontal_pair_loss40_gradual,C2,0.121488072309,0.117396842661,1.03484957139
+tqc_dr,TQC-DR,figure8_unseen,Figure 8,single_horizontal_loss50_gradual,C3,0.125682682888,0.117396842661,1.07057975359
+tqc_dr,TQC-DR,figure8_unseen,Figure 8,vertical_pair_loss40_gradual,C4,0.113730911788,0.117396842661,0.968773173205
+tqc_dr,TQC-DR,figure8_unseen,Figure 8,mixed_horizontal_vertical_loss30_abrupt,C5,0.119923955726,0.117396842661,1.02152624388
+swim4track,Swim4Track,circle_level,Circle,horizontal_pair_loss20_gradual,C1,0.069569856971,0.0632464934678,1.09997966933
+swim4track,Swim4Track,circle_level,Circle,horizontal_pair_loss40_gradual,C2,0.0843649624999,0.0632464934678,1.33390735002
+swim4track,Swim4Track,circle_level,Circle,single_horizontal_loss50_gradual,C3,0.0454883482167,0.0632464934678,0.719223244209
+swim4track,Swim4Track,circle_level,Circle,vertical_pair_loss40_gradual,C4,0.115829077288,0.0632464934678,1.83139129045
+swim4track,Swim4Track,circle_level,Circle,mixed_horizontal_vertical_loss30_abrupt,C5,0.0534059254617,0.0632464934678,0.844409271304
+swim4track,Swim4Track,helix_unseen,Helix,horizontal_pair_loss20_gradual,C1,0.0921219211339,0.0752025863721,1.22498341584
+swim4track,Swim4Track,helix_unseen,Helix,horizontal_pair_loss40_gradual,C2,0.124855796449,0.0752025863721,1.66025934043
+swim4track,Swim4Track,helix_unseen,Helix,single_horizontal_loss50_gradual,C3,0.0516823148463,0.0752025863721,0.687241188629
+swim4track,Swim4Track,helix_unseen,Helix,vertical_pair_loss40_gradual,C4,0.0826041591947,0.0752025863721,1.09842178547
+swim4track,Swim4Track,helix_unseen,Helix,mixed_horizontal_vertical_loss30_abrupt,C5,0.0647114490258,0.0752025863721,0.860494992893
+swim4track,Swim4Track,figure8_unseen,Figure 8,horizontal_pair_loss20_gradual,C1,0.13912518191,0.135511360526,1.02666803263
+swim4track,Swim4Track,figure8_unseen,Figure 8,horizontal_pair_loss40_gradual,C2,0.145879817488,0.135511360526,1.07651356256
+swim4track,Swim4Track,figure8_unseen,Figure 8,single_horizontal_loss50_gradual,C3,0.130077465452,0.135511360526,0.959900815303
+swim4track,Swim4Track,figure8_unseen,Figure 8,vertical_pair_loss40_gradual,C4,0.135905506508,0.135511360526,1.00290858258
+swim4track,Swim4Track,figure8_unseen,Figure 8,mixed_horizontal_vertical_loss30_abrupt,C5,0.133079679278,0.135511360526,0.982055517425

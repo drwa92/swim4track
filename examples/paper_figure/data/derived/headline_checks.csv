@@ -1,0 +1,7 @@
+claim_id,value,unit,definition
+position_vs_pid,42.8081920216,percent lower,Equal-weight mean of 18 cell means; PID is denominator
+position_vs_tqc_dr,14.091935125,percent higher,Equal-weight mean of 18 cell means; TQC-DR is denominator
+attitude_vs_tqc_dr,27.4964205814,percent lower,Equal-weight mean of 18 cell means; TQC-DR is denominator
+tolerance_vs_tqc_dr,22.0785114913,percentage points higher,Equal-weight mean of 18 cell means
+unit_health_mean_abs_command_vs_tqc_dr,7.07219190105,percent lower,Unit-health nominal-adapter trials only
+unit_health_command_variation_rate_vs_tqc_dr,17.1368004875,percent lower,Mean total variation divided by run duration; unit-health trials only
