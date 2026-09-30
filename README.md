@@ -112,38 +112,15 @@ see the guide before using another scene. This is a simulation interface.
 | `scripts/` | Installation, single-trial execution and optional screen recording |
 | `tests/` | Numerical, policy-interface and runtime regression checks |
 | `docs/` | Usage, model contract, validation and provenance |
-| `examples/paper_figure/` | Supplied 270-trial metric table and editable figure generator |
+
 
 The frozen policy consumes vehicle state and a time-varying reference, not
 camera images. The model loader verifies the checkpoint before deserialization
 and uses deterministic inference. To verify the bundled file without loading
 PyTorch, run `python -m swim4track.policy`; add `--load` to exercise inference.
 
-## Validation and research scope
 
-```bash
-python -m unittest discover -s tests -v
-```
-
-[VALIDATION.md](docs/VALIDATION.md) records the checks actually run for this
-release. Core tests do not require ROS or PyTorch. Optional inference tests skip
-if their dependencies are absent; CI also defines a job that requires them.
-The refactored ROS node still needs a smoke test in the target Stonefish
-installation. Historical campaign validation does not automatically validate
-a new wrapper.
-
-The paper studied frozen simulation controllers, including actuator degradation.
-The nominal policy receives no actuator-health input and performs no explicit
-fault diagnosis. The repository does not establish hardware transfer or
-water-current robustness. Historical campaign bags, the full controller bank
-and multi-seed experiments are not bundled. See
-[reproducibility](docs/reproducibility.md) for the exact release scope.
 
 ## Citation and contributions
 
-Citation metadata is in [CITATION.cff](CITATION.cff). See
-[CONTRIBUTING.md](CONTRIBUTING.md) for development guidelines and
-[the release checklist](docs/release_checklist.md) before publishing a release.
-[Publishing instructions](docs/publishing.md) cover creating the GitHub repository.
-Code preserves the source package's Apache-2.0 declaration; model, media and
-upstream attribution are described in [NOTICE](NOTICE) and the provenance docs.
+
