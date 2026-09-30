@@ -57,6 +57,26 @@ See [training](docs/training.md) for startup checks, outputs and learning curves
 Training is optional for inference. A new run is not expected to reproduce
 bit-identical weights on a different software or hardware stack.
 
+## Simulator prerequisites
+
+Before running Swim4Track in Stonefish, install the simulator,
+its ROS 2 wrapper, and the BlueROV2 simulation package:
+
+- **Stonefish simulator:** https://github.com/patrykcieslak/stonefish
+- **Stonefish ROS 2 wrapper:** https://github.com/patrykcieslak/stonefish_ros2
+- **BlueROV2 simulation package:** https://github.com/bvibhav/stonefish_bluerov2/tree/master
+
+The BlueROV2 repository provides vehicle assets, simulation scenarios,
+and setup instructions. Its documented setup specifies `v1.3` of
+Stonefish and the ROS 2 wrapper.
+
+Swim4Track's deployment instructions target **ROS 2 Humble** with
+direct control of eight thrusters. The upstream BlueROV2 instructions
+describe a ROS 2 Jazzy and ArduSub SITL workflow. For Swim4Track's
+required scene, launch dependencies, and command interface, follow
+the [ROS 2 / Stonefish guide](docs/stonefish.md).
+
+
 ## Infer and test in Stonefish
 
 With ROS 2 Humble and the existing audited Stonefish workspace already working:
