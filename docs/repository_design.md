@@ -20,6 +20,4 @@ its T200 model, while the audited Stonefish scene uses the documented inverse
 thrust calibration. The previous-action observation always uses the raw actor
 action. See [model_card.md](model_card.md) for the complete contract.
 
-Some preserved scientific modules retain historical names and comments to keep
-their provenance auditable. Packaging cleanup does not rewrite the research
-model or silently introduce a new controller.
+

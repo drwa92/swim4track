@@ -1,0 +1,27 @@
+ RELEASE_MANIFEST_SHA256.txt                        |  96 [31m---[m
+ docs/ASSET_PROVENANCE.md                           |  35 [31m-[m
+ docs/SOURCE_PROVENANCE.json                        | 162 [31m-----[m
+ docs/VALIDATION.md                                 |  78 [31m--[m
+ docs/pid_video.md                                  |  87 [31m---[m
+ docs/publishing.md                                 |  29 [31m-[m
+ docs/release_checklist.md                          |  21 [31m-[m
+ docs/repository_design.md                          |   4 [32m+[m[31m-[m
+ docs/reproducibility.md                            |  52 [31m--[m
+ docs/your_ros2sim_setup.md                         |  87 [31m---[m
+ examples/paper_figure/DATA_DICTIONARY.md           |  74 [31m--[m
+ examples/paper_figure/INPUT_SHA256SUMS.txt         |   6 [31m-[m
+ examples/paper_figure/MANIFEST_SHA256.txt          |  15 [31m-[m
+ examples/paper_figure/README.md                    |  43 [31m--[m
+ .../paper_figure/data/derived/cell_metrics.csv     |  55 [31m--[m
+ .../data/derived/condition_definitions.csv         |   7 [31m-[m
+ .../paper_figure/data/derived/headline_checks.csv  |   7 [31m-[m
+ .../paper_figure/data/derived/numerical_audit.json | 117 [31m---[m
+ .../paper_figure/data/derived/numerical_audit.txt  |  29 [31m-[m
+ .../data/derived/paired_swim4track_vs_tqc_dr.csv   |  19 [31m-[m
+ .../derived/position_degradation_penalties.csv     |  46 [31m--[m
+ .../paper_figure/data/input/cell_summaries.csv     |  55 [31m--[m
+ .../input/stonefish_robustness_campaign_v2.json    |  67 [31m--[m
+ .../data/input/valid_trial_metrics.csv             | 271 [31m-------[m
+ .../paper_figure/generate_robustness_figure.py     | 805 [31m---------------------[m
+ examples/paper_figure/requirements.txt             |   3 [31m-[m
+ 26 files changed, 1 insertion(+), 2269 deletions(-)

@@ -1,7 +1,0 @@
-condition_code,condition_id,figure_label,affected_software_channels,affected_thruster_indices,final_health_factor,loss_ramp_s,figure_onset_label,display_health_crosscheck
-C0,nominal_adapter,Unit health,"H0,H1",0;1,1,0,none,1
-C1,horizontal_pair_loss20_gradual,Horizontal pair: 20% loss,"H0,H1",0;1,0.8,10,10 s,0.8
-C2,horizontal_pair_loss40_gradual,Horizontal pair: 40% loss,"H0,H1",0;1,0.6,10,10 s,0.6
-C3,single_horizontal_loss50_gradual,Single horizontal: 50% loss,H0,0,0.5,10,10 s,0.5
-C4,vertical_pair_loss40_gradual,Vertical pair: 40% loss,"V4,V5",4;5,0.6,10,10 s,0.6
-C5,mixed_horizontal_vertical_loss30_abrupt,Mixed H/V: 30% loss,"H0,V4",0;4,0.7,0,abrupt,0.7
